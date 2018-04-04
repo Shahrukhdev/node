@@ -1,0 +1,80 @@
+  <% include partial/header1 %>
+
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+
+    <% include partial/sidebar %>
+
+      <!-- PAGE CONTENT -->
+      <div class="page-content">
+
+    <% include partial/logout %>
+
+          <div class="page-title">
+              <h4><span class="fa fa-arrow-circle-o-left"></span> User: <%= email %> </h4>
+          </div>
+
+          <!-- PAGE CONTENT WRAPPER -->
+          <div class="page-content-wrap">
+
+              <div class="row">
+                  <div class="col-md-12">
+
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                            
+                               <a href="/addrecord" class="btn btn-success pull-right ">Add Record</a>
+                                <a href="/csv" class="btn btn-success  ">CSV</a>&nbsp;&nbsp;
+                          </div>
+                          <div class="panel-body">
+                            <table class="table datatable">
+                                         <thead>
+                                             <tr>
+                                               <th>Image</th>
+                                                 <th>Name</th>
+                                                 <th>Email</th>
+                                                 <th>Address</th>
+                                                 <th>Date Of Birth</th>
+                                                 <th>Country</th>
+                                                 <th>Created On</th>
+                                                 <th>Action</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                            <%if(data.length)
+                                            var id=4; {
+                                            for(var i=0; i<data.length; i++) { %>
+    <tr>
+<td><img src='<%= data[i].imageurl%>' class='img-circle' style="width:100px ;height:100px;"></td>
+      <td><%= data[i].name%></td><td><%= data[i].email%></td>
+      <td><%= data[i].address%></td><td><%= data[i].dob%></td>
+      <td><%= data[i].country%></td><td><%= data[i].created_at%></td>
+      <td>
+        <form method="post" action="/deleterecord/<%= data[i].id %>?_method=DELETE">
+  <button class="btn btn-info" type="submit"><i class="fa fa-trash-o"></i></button>
+</form><br>
+<button class="btn btn-warning" data-toggle="modal" data-target="#modal_large" value="<%= data[i].id %>" type="button"
+  onclick="getrecordonmodel('<%= data[i].id %>','<%= data[i].name%>','<%= data[i].email%>','<%= data[i].address%>','<%= data[i].dob%>','<%= data[i].country%>')"><i class="fa fa-pencil"></i></button>
+
+</td>
+
+                                              <%}}%>
+
+                                           </tbody>
+                                 </table>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
+          <!-- END PAGE CONTENT WRAPPER -->
+      </div>
+      <!-- END PAGE CONTENT -->
+  </div>
+  <!-- END PAGE CONTAINER -->
+
+
+<% include partial/model %>
+  <% include partial/footer1 %>

@@ -1,0 +1,105 @@
+<div class="modal" id="modal_large" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="largeModalHead">Large Modal</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                  <div class="col-md-12">
+
+                      <div class="panel panel-default">
+
+                              <% if ( typeof(msg)!= 'undefined' ) { %>
+                                       <p style='color:Red;'> <%= msg %> </p>
+                                <% } %>
+
+  <!--enctype="multipart/form-data"-->
+
+                          <div class="panel-body">
+                             <form class="form-horizontal" method="post" enctype="multipart/form-data" >
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Name</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" name="name" id="name" class="form-control"/>
+                                    </div>
+                                    <span class="help-block">This is sample of text field</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Email</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" name="email" id="email" class="form-control"/>
+                                    </div>
+                                    <span class="help-block">This is sample of text field</span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Date Of Birth</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                        <input type="text" name="dateofbirth" id="dob" class="form-control datepicker" value="2014-11-01">
+                                    </div>
+                                    <span class="help-block">Click on input field to get datepicker</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">address</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <textarea class="form-control" id="address" name="address" rows="5"></textarea>
+                                    <span class="help-block">Default textarea field</span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Country</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <select class="form-control select" name="country" id="country">
+                                        <option value="Indian">India</option>
+                                        <option value="America">America</option>
+                                        <option value="England">England</option>
+
+                                    </select>
+                                    <span class="help-block">Select box example</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">File</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="file" class="fileinput btn-primary" name="file"  title="Browse file"/>
+                                    <span class="help-block">Input type file</span>
+                                </div>
+                            </div>
+
+
+                             <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label"></label>
+                                <div class="col-md-6 col-xs-12">
+                                    <button type="button" id="updatebtn" onclick="editrecord(this.value)"class="btn btn-primary">Update Record</button>
+                                </div>
+                            </div>
+                          </form>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            </div>
+        </div>
+    </div>
+</div>

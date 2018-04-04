@@ -1,0 +1,42 @@
+    <% include partial/header %>
+
+ <body>
+
+        <div class="login-container lightmode">
+
+            <div class="login-box animated fadeInDown">
+                <div class="login-logo"></div>
+                <div class="login-body">
+                    <div class="login-title"><strong>Sign Up</strong> For new Account</div>
+                    <form action="/register" class="form-horizontal" method="post">
+                      <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="name" placeholder="Name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="email" class="form-control" name="email" placeholder="E-mail"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="password" class="form-control" name="password" placeholder="Password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-info btn-block">Sign Up</button>
+                        </div>
+
+                    </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+
+
+<% include partial/footer %>
